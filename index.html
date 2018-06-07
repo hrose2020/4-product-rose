@@ -13,14 +13,567 @@
         <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- custom style -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Font Awesome Icons --> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Google Font --> 
+        <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Kavivanar" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     </head>
 
     <body>
-        
-        <h1>Hello World!</h1>
-        
-        <p>Hey there, just testing out github and netlify....</p>
-  
+
+        <!-- top nav, desktop and tablet --> 
+        <div class="w3-top">
+
+            <div class="w3-bar w3-theme">
+                <a href="#home" class="w3-bar-item"><button class="w3-theme w3-xxlarge"><i class="fa fa-home"></i></button></a>
+                <a href="#about" class="w3-bar-item w3-button w3-hide-small">About</a>
+                <a href="#books" class="w3-bar-item w3-button w3-hide-small">Books</a>
+                <a href="#picks" class="w3-bar-item w3-button w3-hide-small">Staff Picks</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact Us</a>
+                <a href="#login" class="w3-bar-item w3-button w3-hide-small w3-right">
+                    <!-- Login -->
+                    <div id="login">
+                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">Login</button>
+
+                        <div id="id01" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                    <form action="action_page.php">
+
+                                        <form class="w3-container" action="/action_page.php">
+                                            <p>      
+                                                <label class="w3-text-theme"><b>Username</b></label>
+                                                <input class="w3-input w3-border w3-theme-l5" name="first" type="text"></p>
+                                            <p>      
+                                                <label class="w3-text-theme"><b>Password</b></label>
+                                                <input class="w3-input w3-border w3-theme-l5" name="last" type="text"></p>
+                                            <p>
+                                                <button class="w3-btn w3-theme">Login</button></p>
+                                        </form>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#checkout" class="w3-bar-item"><button class="w3-theme w3-xlarge w3-right"><i class="fa fa-shopping-cart"></i></button></a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right">
+                    <!-- The form -->
+                    <form class="example" action="action_page.php">
+                        <input type="text" placeholder="Search" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form></a>
+                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="topNav()">&#9776;</a>
+            </div>
+
+            <!-- top nav, mobile -->
+            <div id="mobileNav" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                <a href="#about" class="w3-bar-item w3-button">About</a><a href="#books" class="w3-bar-item w3-button">Books</a>
+                <a href="#picks" class="w3-bar-item w3-button">Staff Picks</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact Us</a>
+                <a href="#login" class="w3-bar-item w3-button">Login</a>
+            </div>
+
+
+
+
+        </div>
+
+        <!-- First Parallax Image with Logo Text -->
+        <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+            <div class="w3-display-middle" style="white-space:nowrap;">
+                <span class="w3-center w3-padding-large w3-theme-d3 w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small"><i class="w3-padding fa fa-book"></i>Andover</span> Bookstore<i class="w3-padding fa fa-book"></i></span>
+            </div>
+        </div>
+
+        <!-- Container (About Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="about">
+            <h2 class="w3-center">About</h2>
+            <p>The Andover Bookstore, located in Andover, Massachusetts, was founded in 1809. It is the second oldest bookstore in the country, and celebrated its 200th anniversary in October 2009. The store was bought by the late Robert Hugo in 1992. It is one of multiple locations of HugoBooks, including Marblehead, Newburyport, Beverly, and a clothing store, Campus Collections, all owned by the Hugo family. The Andover Bookstore is the perfect place to go for storytelling, author events, book groups, and poetry readings. The store promotes shopping local and supporting small businesses instead of large corporations. The Andover location is one of the only bookstores of its kind around the area, which makes it so special to the town. In ___ the Andover Bookstore moved to a new and cozier location also on Main Street. Townspeople still come in and reminisce about their childhood memories in the store. Others come in and make new memories.</p>
+        </div>
+
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min" id="books">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">Books</span>
+            </div>
+        </div>
+
+        <div class="w3-content w3-container w3-padding-64">
+            <div class="w3-bar w3-theme">
+                <button class="w3-bar-item w3-button" onclick="openTab('Fiction')">Fiction</button>
+                <button class="w3-bar-item w3-button" onclick="openTab('Non-Fiction')">Non-Fiction</button>
+                <button class="w3-bar-item w3-button" onclick="openTab('Childrens')">Children's</button>
+            </div>
+
+            <div id="Fiction" class="tab">
+
+                <!-- Container (Books Section) -->
+                <div class="w3-content w3-container w3-padding-64" id="portfolio">
+                    <h2 class="w3-center">Fiction</h2>
+                    <h4 class="w3-center">Click on the books for more info.</h4>
+
+                    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+                    <div class="w3-row-padding w3-center">
+                        <div class="w3-col m3">
+                            <img src="/img/warlight-cover2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Warlight By Michael Ondaatje $26.95">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/circe-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Circe By Madeline Miller $27.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/little-fires-everywhere-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Little Fires Everywhere By Celeste Ng $27.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/the-fallen-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Fallen By David Baldacci $29.00">
+                        </div>
+                    </div>
+
+                    <div class="w3-row-padding w3-center w3-section">
+                        <div class="w3-col m3">
+                            <img src="/img/the-power-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Power By Naomi Alderman $26.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/gentleman-in-moscow-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Gentleman in Moscow By Amor Towles $27.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/the-mars-room-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Mars Room By Rachel Kushner $27.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/love-and-ruin-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Love and Ruin By Paula McLain $28.00">
+                        </div>
+
+                    </div>
+
+                    <!-- Modal for full size images on click-->
+                    <div id="modal01" class="w3-modal w3-theme-l5" onclick="this.style.display='none'">
+                        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+                        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                            <img id="img01" class="w3-image">
+                            <p id="caption" class="w3-opacity w3-large"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Non-Fiction" class="tab">
+
+                <!-- Container (Books Section) -->
+                <div class="w3-content w3-container w3-padding-64" id="portfolio">
+                    <h2 class="w3-center">Non-Fiction</h2>
+                    <h4 class="w3-center">Click on the books for more info.</h4>
+
+                    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+                    <div class="w3-row-padding w3-center">
+                        <div class="w3-col m3">
+                            <img src="/img/change-mind-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="How to Change Your Mind By Michael Pollan $28.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/soul-of-america-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Soul of America By Jon Meacham $30.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/higher-loyalty-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Higher Loyalty By James Comey $29.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/astrophysics-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Astrophysics for People in a Hurry By Neil DeGrasse Tyson $18.95">
+                        </div>
+                    </div>
+
+                    <div class="w3-row-padding w3-center w3-section">
+                        <div class="w3-col m3">
+                            <img src="/img/educated-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Educated By Tara Westover $28.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/gone-in-the-dark-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="I'll Be Gone in the Dark By Michelle McNamara, Gillian Flynn $27.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/barracoon-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barracoon By Zora Neale Hurston, Alice Walker $24.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/magnolia-table-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Magnolia Table By Joanna Gaines, Marah Stets $29.99">
+                        </div>
+                    </div>
+
+                    <!-- Modal for full size images on click-->
+                    <div id="modal01" class="w3-modal w3-theme-l5" onclick="this.style.display='none'">
+                        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+                        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                            <img id="img01" class="w3-image">
+                            <p id="caption" class="w3-opacity w3-large"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Childrens" class="tab">
+
+                <!-- Container (Books Section) -->
+                <div class="w3-content w3-container w3-padding-64" id="portfolio">
+                    <h2 class="w3-center">Children's</h2>
+                    <h4 class="w3-center">Click on the books for more info.</h4>
+
+                    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+                    <div class="w3-row-padding w3-center">
+                        <div class="w3-col m3">
+                            <img src="/img/places-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Oh, the Places You'll Go! By Seuss $18.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/war-storm-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="War Storm By Victoria Aveyard $19.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/apollo-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Trials of Apollo By Rick Riordan $20.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/wrinkle-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Wrinkle in Time By Madeleine L'Engle $8.99">
+                        </div>
+                    </div>
+
+                    <div class="w3-row-padding w3-center w3-section">
+                        <div class="w3-col m3">
+                            <img src="/img/dog-man-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Dog Man and Cat Kid By Dav Pilkey $9.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/penderwicks-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Penderwicks at Last By Jeanne Birdsall $16.99">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/hate-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Hate U Give By Angie Thomas $19.00">
+                        </div>
+
+                        <div class="w3-col m3">
+                            <img src="/img/children-cover.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Children of Blood and Bone By Tomi Adeyemi $18.99">
+                        </div>
+
+                    </div>
+
+                    <!-- Modal for full size images on click-->
+                    <div id="modal01" class="w3-modal w3-theme-l5" onclick="this.style.display='none'">
+                        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+                        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                            <img id="img01" class="w3-image">
+                            <p id="caption" class="w3-opacity w3-large"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Third Parallax Image with Portfolio Text -->
+        <div class="w3-display-container w3-opacity-min w3-center" id="picks">
+            <video autoplay muted loop id="myVideo">
+                <source src="img/book-vid.mp4" type="video/mp4">
+            </video>
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">Staff Picks</span>
+            </div>
+        </div>
+
+        <!-- Container (Portfolio Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="portfolio">
+            <div class="w3-row">
+
+                <button onclick="accordion('john')" class="w3-btn w3-block w3-theme-l4 w3-left-align w3-border">John<i class="fa fa-caret-down w3-right w3-xlarge"></i>
+                </button>
+                <div id="john" class="w3-container w3-hide w3-theme-l5">
+
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-third w3-padding ">
+                            <div class="w3-card">
+                                <img src="img/thieves-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/girl-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/amity-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button onclick="accordion('chris')" class="w3-btn w3-block w3-theme-l4 w3-left-align">Chris<i class="fa fa-caret-down w3-right w3-xlarge"></i></button>
+
+                <div id="chris" class="w3-container w3-hide w3-theme-l5">
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-third w3-padding ">
+                            <div class="w3-card">
+                                <img src="/img/moon-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/jellyfish-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/waters-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button onclick="accordion('megan')" class="w3-btn w3-block w3-theme-l4 w3-left-align w3-border">Megan<i class="fa fa-caret-down w3-right w3-xlarge"></i>
+                </button>
+                <div id="megan" class="w3-container w3-hide w3-theme-l5">
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-third w3-padding ">
+                            <div class="w3-card">
+                                <img src="/img/jacob-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/care-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/alice-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button onclick="accordion('vickie')" class="w3-btn w3-block w3-theme-l4 w3-left-align">Vickie<i class="fa fa-caret-down w3-right w3-xlarge"></i></button>
+
+                <div id="vickie" class="w3-container w3-hide w3-theme-l5">
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-third w3-padding ">
+                            <div class="w3-card">
+                                <img src="/img/library-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/souls-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/rosemary-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button onclick="accordion('karen')" class="w3-btn w3-block w3-theme-l4 w3-left-align w3-border">Karen<i class="fa fa-caret-down w3-right w3-xlarge"></i>
+                </button>
+                <div id="karen" class="w3-container w3-hide w3-theme-l5">
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-third w3-padding ">
+                            <div class="w3-card">
+                                <img src="/img/constellation-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/world-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-padding">
+                            <div class="w3-card">
+                                <img src="/img/given-cover.jpg" style="width:100%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Parallax Image with Portfolio Text -->
+        <div class="bgimg-3 w3-display-container w3-opacity-min" id="contact">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">Contact Us</span>
+            </div>
+        </div>
+
+        <!-- Container (Contact Section) -->
+        <div class="w3-content w3-container">
+
+            <div class="w3-row w3-padding-32 w3-section">
+                <div class="w3-col w3-half w3-padding">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.9045313496713!2d-71.14181714494457!3d42.65595543288118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3088b8e86ab9f%3A0x2c0ed2267eabc36!2sAndover+Bookstore+Inc!5e0!3m2!1sen!2sus!4v1526325388710" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="w3-col w3-half w3-padding">
+                    <div class="w3-large w3-margin-bottom">
+                        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Andover, MA<br>
+                        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 978-475-0143<br>
+                        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: andover@hugobooksinc.com<br>
+                    </div>
+                    <form action="/action_page.php" target="_blank">
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            </div>
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                            </div>
+                        </div>
+                        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                        <button class="w3-button w3-theme-d4 w3-right w3-section" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Third Parallax Image with Portfolio Text -->
+        <div class="bgimg-4 w3-display-container w3-opacity-min" id="checkout">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">Checkout</span>
+            </div>
+        </div>
+
+        <!-- Container (Checkout Section) -->
+        <div class="w3-content w3-container w3-padding-64">
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form action="/action_page.php">
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <h3>Billing Address</h3>
+                                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                    <input type="text" id="email" name="email" placeholder="john@example.com">
+                                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                    <label for="city"><i class="fa fa-institution"></i> City</label>
+                                    <input type="text" id="city" name="city" placeholder="New York">
+
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label for="state">State</label>
+                                            <input type="text" id="state" name="state" placeholder="NY">
+                                        </div>
+                                        <div class="col-50">
+                                            <label for="zip">Zip</label>
+                                            <input type="text" id="zip" name="zip" placeholder="10001">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-50">
+                                    <h3>Payment</h3>
+                                    <label for="fname">Accepted Cards</label>
+                                    <div class="icon-container">
+                                        <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                        <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                        <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                        <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                    </div>
+                                    <label for="cname">Name on Card</label>
+                                    <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                    <label for="ccnum">Credit card number</label>
+                                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                    <label for="expmonth">Exp Month</label>
+                                    <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label for="expyear">Exp Year</label>
+                                            <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                        </div>
+                                        <div class="col-50">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="352">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <label>
+                                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                            </label>
+                            <input type="submit" value="Continue to checkout" class="btn">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-25">
+                    <div class="container">
+                        <h4>Cart 
+                            <span class="price" style="color:black">
+                                <i class="fa fa-shopping-cart"></i> 
+                                <b>4</b>
+                            </span>
+                        </h4>
+                        <p><a class="cart" href="#">Product 1</a> <span class="price">$15</span></p>
+                        <p><a class="cart" href="#">Product 2</a> <span class="price">$5</span></p>
+                        <p><a class="cart" href="#">Product 3</a> <span class="price">$8</span></p>
+                        <p><a class="cart" href="#">Product 4</a> <span class="price">$2</span></p>
+                        <hr>
+                        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="w3-center w3-theme w3-padding-64">
+            <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+            <div class="w3-xlarge w3-section">
+                <a href="https://www.facebook.com/AndoverBooks/">
+                    <i class="w3-xxxlarge fa fa-facebook-official w3-hover-opacity"></i></a>
+                <a href="https://www.instagram.com/andoverbookstore/">
+                    <i class="w3-xxxlarge fa fa-instagram w3-hover-opacity"></i></a>
+                <a href="https://twitter.com/andoverbooks?lang=en">
+                    <i class="w3-xxxlarge fa fa-twitter w3-hover-opacity"></i></a>
+
+            </div>
+            <p>Powered by <a href="https://www.hugobookstores.com/andover" title="HugoBookstores" target="_blank">Hugo Bookstores</a></p>
+        </footer>
+
+        <script src="js/topNav.js"></script>
+        <script src="js/tabs.js"></script>
+        <script src="js/accordion.js"></script>
+        <script src="js/video.js"></script>
+        <script src="js/modal.js"></script>
     </body>
 
 </html>
